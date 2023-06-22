@@ -1,0 +1,37 @@
+//query to delete
+
+mutation{
+ deleteClient(id: "6492bf96feddd4bacfc02dab"){
+  email, name
+}
+}
+
+//query to get all clients
+{
+  clients{
+    name
+  }
+}
+
+mutation for adding a project
+mutation{
+  addProject(name: "Mobile App Dev", description: "Titan Project long description", status: new, clientId: "6491ba9097a7f54819e0eca0"){
+    name, id
+  }
+}
+// query all projects with clients
+{
+  projects{
+    name, status
+    client{
+      name, email
+    }
+  }
+}
+// mutation for updating a project
+
+mutation{
+  updateProject(id: "6492e10c44d395b75e6c2e9a", name: "Sphinx Corps Updated", status: completed){
+    name status
+  }
+}
